@@ -14,7 +14,7 @@ Worst transformation, but also the simplest.
 
 ![img3](./img3.png) => ![rgb](./img3_rgb.png)
 
-Black becomes white and vice versa. Color `(r,g,b)` transforms to `(255-r, 255-g, 255-b)`. It can be applied to your system by installing `xcalib`, and running `xcalib -i -a`. To restore the colors type the same command again. This is how the code above will look like in this approach:
+Black becomes white and vice versa. Color `(r,g,b)` transforms to `(1-r, 1-g, 1-b)`. It can be applied to your system by installing `xcalib`, and running `xcalib -i -a`. To restore the colors type the same command again. This is how the code above will look like in this approach:
 
 ![egitor_rgb](./editor_rgb.png)
 
