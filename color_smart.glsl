@@ -13,7 +13,7 @@ uniform sampler2D tex;
  * and it precisely retains "hue" component of the color.
  * (Matrices don't do that.)
  *
- * See screenshots if in doubt.
+ * See screenshots if in doubt. https://github.com/vn971/linux-color-inversion
  */
 void main() {
 	vec4 c = texture2D(tex, gl_TexCoord[0].st);

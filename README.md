@@ -66,3 +66,9 @@ To the best of my knowledge, these approaches do NOT work:
 Reported to be working:
 
 * ubuntu `compiz` compositor along with a manually compiled "Color Filter" plugin. [https://ubuntuforums.org/showthread.php?t=1419702](https://ubuntuforums.org/showthread.php?t=1419702)
+
+## Credits
+
+* The `compiz` plugin and the ubuntu forum that showed the task is really possible, and that it must be done using OpenGL
+* Compton developers
+* Kurnevsky Evgeny for suggesting and explaining on how to use compton for such a task.
