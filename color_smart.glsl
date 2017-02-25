@@ -16,8 +16,8 @@ uniform sampler2D tex;
  * See screenshots if in doubt.
  */
 void main() {
-		vec4 c = texture2D(tex, gl_TexCoord[0].st);
-	//if (invert_color) {
+	vec4 c = texture2D(tex, gl_TexCoord[0].st);
+	if (invert_color) {
 		// This transformation is exactly equal to rgb-negation combined with
 		// HUE rotation by 180 degrees.
 		//
@@ -41,7 +41,7 @@ void main() {
 	
 		float total = c.a - min(c.r, min(c.g, c.b)) - max(c.r, max(c.g, c.b));
 		c = vec4(total + c.r, total + c.g, total + c.b, c.a);
-	//}
+	}
 	c *= opacity;
 	gl_FragColor = c;
 }
