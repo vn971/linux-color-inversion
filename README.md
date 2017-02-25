@@ -1,6 +1,5 @@
 # Linux color inversion
 
-
 This repository shows how to do "smart" color inversion on Linux.
 
 ![orig](./editor.png) ![rgb](./editor_hue_rgb.png)
