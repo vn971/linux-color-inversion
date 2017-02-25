@@ -48,7 +48,7 @@ In order to bring these niceties to your system do:
 * Install `compton` compositor
 * Clone this repo (or download the *.glsl files)
 * Go into the directory containing the *.glsl files
-* Launch the compositor with: `compton --glx-fshader-win "$(cat color_smart.glsl)" --invert-color-include id!=0`
+* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_smart.glsl)" --invert-color-include id!=0`
 
 If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the "script" above.
 
