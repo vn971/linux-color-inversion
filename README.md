@@ -6,16 +6,16 @@ The general idea is to transform black-on-white texts to white-on-black, which m
 
 There are many ways to do "color inversion" though:
 
-Name | First image <br/>(editor) | Second image <br/>(color chooser)
----- | ------------- | ------
-Original Image| ![](./editor.png) | ![img3](./img3.png)
-RGB negation | ![](./editor_rgb.png) | ![img3](./img3_rgb.png)
-Matrix (halfs) | ![](./editor_matrix_half.png) | ![img3](./img3_matrix_half.png)
-Matrix (thirds) | ![](./editor_matrix_third.png) | ![img3](./img3_matrix_third.png)
-RGB+HUE | ![](./editor_smart.png) | ![img3](./img3_smart.png)
+Name | First image <br/>(editor) | Second image <br/>(color chooser) | Third image <br/>(gimp chooser)
+---- | ---- | ---- | ----
+Original Image| ![](./editor.png) | ![](./img3.png) | ![](./gchooser.png)
+RGB <br/>negation | ![](./editor_rgb.png) | ![](./img3_rgb.png) | ![](./gchooser_rgb.png)
+Matrix <br/>(halfs) | ![](./editor_matrix_half.png) | ![](./img3_matrix_half.png) | ![](./gchooser_matrix_half.png)
+Matrix <br/>(thirds) | ![](./editor_matrix_third.png) | ![](./img3_matrix_third.png) | ![](./gchooser_matrix_third.png)
+RGB+HUE | ![](./editor_rgb_hue.png) | ![](./img3_rgb_hue.png) | ![](./gchooser_rgb_hue.png)
 
 ## RGB negation
-Worst transformation, but also the simplest.
+The simplest, but probably also the worst.
 
 Black becomes white and vice versa. Color `(r,g,b)` transforms to `(1-r, 1-g, 1-b)`. It can be applied to your system by installing `xcalib`, and running `xcalib -i -a`. To restore, type the same command again.
 
@@ -34,7 +34,10 @@ References: these color transformations are also implemented in the Windows-only
 
 ## RGB negation combined with HUE rotation
 
-This is the subjective "best" approach I found so far. It does not lose color richness (it's a bijection from full RGB color space to itself), resulting HUE value is always the same as original.
+A good approach (my favorite) that preserves the "color" (hue) and maintains color richness (the transformation is a bijection from RGB color space to itself).
+
+Technically, this transformation inverts brightness by doing RGB negation
+and then restores hue by doing a 180-degree hue rotation.
 
 See below on how to enable this color transformation on Linux (compton).
 
@@ -45,13 +48,14 @@ In order to bring these niceties to your system do:
 * Install `compton` compositor
 * Clone this repo (or download the *.glsl files)
 * Go into the directory containing the *.glsl files
-* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_smart.glsl)" --invert-color-include id!=0`
+* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_rgb_hue.glsl)" --invert-color-include id!=0`
+* If you use subpixel order for your fonts, consider inverting them simultaneously, too (RGB should become BGR and vice-versa).
 
 If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the "script" above.
 
 **Warning:** This will replace your current (xfce/gnome/kde/i3/whatever) compositor. Non-permanently, so if you're not satisfied, kill the compositor and/or start your old one back. Alternatively, log out and log in back.
 
-## Alternatives
+## Alternatives, future work
 
 To the best of my knowledge, these approaches do NOT work:
 
@@ -63,6 +67,8 @@ To the best of my knowledge, these approaches do NOT work:
 Reported to be working:
 
 * ubuntu `compiz` compositor along with a manually compiled "Color Filter" plugin. [https://ubuntuforums.org/showthread.php?t=1419702](https://ubuntuforums.org/showthread.php?t=1419702)
+
+A future work might be to find some "colorfullness"-preserving algorithm, in addition to preserving hue and doing some form of brightness inversion. If interested, see wikipedia for "colorfullness" and prepare yourself to experiment with glsl code.
 
 ## Credits
 
