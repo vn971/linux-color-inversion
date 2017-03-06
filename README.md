@@ -88,5 +88,7 @@ A future work might be to find some "colorfullness"-preserving algorithm, in add
 
 * The `compiz` plugin and the ubuntu forum for showing that the task is possible, and showing it should be OpenGL-based
 * Compton developers
-* "NegativeScreen" developers for providing analysis, matrix examples
+* NegativeScreen(Windows) developers for providing analysis, matrices examples
 * Kurnevsky Evgeny for suggesting and explaining on how to use compton for such a task.
+
+(This repository was previosly hosted on github here: https://github.com/vn971/linux-color-inversion but github messed up with its ToS pretty seriously, so I moved to gitLab.)
