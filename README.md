@@ -8,11 +8,12 @@ There are many ways to do "color inversion" though:
 
 Name | First image <br/>(editor) | Second image <br/>(color chooser) | Third image <br/>(gimp chooser)
 ---- | ---- | ---- | ----
-Original Image| ![](./editor.png) | ![](./img3.png) | ![](./gchooser.png)
-RGB <br/>negation | ![](./editor_rgb.png) | ![](./img3_rgb.png) | ![](./gchooser_rgb.png)
-Matrix <br/>(halfs) | ![](./editor_matrix_half.png) | ![](./img3_matrix_half.png) | ![](./gchooser_matrix_half.png)
-Matrix <br/>(thirds) | ![](./editor_matrix_third.png) | ![](./img3_matrix_third.png) | ![](./gchooser_matrix_third.png)
-RGB+HUE | ![](./editor_rgb_hue.png) | ![](./img3_rgb_hue.png) | ![](./gchooser_rgb_hue.png)
+Original Image| ![](./editor.png) | ![](./img4.png) | ![](./gchooser.png)
+RGB <br/>negation | ![](./editor_rgb.png) | ![](./img4_rgb.png) | ![](./gchooser_rgb.png)
+Matrix <br/>(halfs) | ![](./editor_matrix_half.png) | ![](./img4_matrix_half.png) | ![](./gchooser_matrix_half.png)
+Matrix <br/>(thirds) | ![](./editor_matrix_third.png) | ![](./img4_matrix_third.png) | ![](./gchooser_matrix_third.png)
+RGB shift | ![](./editor_rgb_shift.png) | ![](./img4_rgb_shift.png) | ![](./gchooser_rgb_shift.png)
+RGB Shift<br/>(light <br/>biased) | ![](./editor_rgb_shift_bias.png) | ![](./img4_rgb_shift_bias.png) | ![](./gchooser_rgb_shift_bias.png)
 
 ## RGB negation
 The simplest, but probably also the worst.
@@ -32,14 +33,24 @@ See below on how to enable this color transformation on Linux (compton).
 
 References: these color transformations are also implemented in the Windows-only application ["NegativeScreen"](https://github.com/mlaily/NegativeScreen). I studied those repo matrices while doing this comparison.
 
-## RGB negation combined with HUE rotation
+## RGB shift
 
-A good approach (my favorite) that preserves the "color" (hue) and maintains color richness (the transformation is a bijection from RGB color space to itself).
+This approach preserves the "color" (hue) and maintains color richness (the transformation is a bijection from RGB color space to itself).
 
-Technically, this transformation inverts brightness by doing RGB negation
-and then restores hue by doing a 180-degree hue rotation.
+Technically, this transformation is the same as doing RGB negation combined with 180-degree HUE rotation.
 
 See below on how to enable this color transformation on Linux (compton).
+
+## RGB shift (light bias)
+The same as RGB shift, but with a bias to "colorfullness"
+for dark colors (also making them less dark).
+
+It tends to preserve "colorfullness" a bit better than "RGB shift".
+It loses the RGB space a bit though because of taking fractionals.
+The "color gamut" is preserved.
+
+This seems to be a controversal color inversion technique,
+but it actually gives pretty good results for e.g. code diffs (TODO: include in screenshots). I'll write a full description later.
 
 ## Making it work with "compton"
 
@@ -48,7 +59,7 @@ In order to bring these niceties to your system do:
 * Install `compton` compositor
 * Clone this repo (or download the *.glsl files)
 * Go into the directory containing the *.glsl files
-* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_rgb_hue.glsl)" --invert-color-include id!=0`
+* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_rgb_shift.glsl)" --invert-color-include id!=0`
 * If you use subpixel order for your fonts, consider inverting them simultaneously, too (RGB should become BGR and vice-versa).
 
 If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the "script" above.
