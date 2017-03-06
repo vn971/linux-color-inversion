@@ -39,18 +39,18 @@ This approach preserves the "color" (hue) and maintains color richness (the tran
 
 Technically, this transformation is the same as doing 180-degree HUE rotation combined with RGB negation.
 
-See below on how to enable this color transformation on Linux (compton). You apply such color transformation to images in GIMP: 1.Menu > Colors > HueSaturation > Hue > 180 > OK. 2.Menu > Colors > Invert
+See below on how to enable this color transformation on Linux (compton). You can apply it to images in GIMP: 1.Menu > Colors > HueSaturation > Hue > 180 > OK. 2.Menu > Colors > Invert
 
 ## RGB shift (light bias)
 The same as RGB shift, but with a bias to "colorfullness"
 for dark colors (also making them less dark).
 
 It tends to preserve "colorfullness" a bit better than "RGB shift".
-It loses the RGB space a bit though because of taking fractionals.
+It loses the RGB space a bit though because of taking fractions.
 The "color gamut" is preserved.
 
 This seems to be a controversal color inversion technique,
-but it actually gives pretty good results for e.g. code diffs (TODO: include in screenshots). I'll write a full description later.
+but it actually gives pretty good results for e.g. code diffs (TODO: add screenshots). I'll write a full description later.
 
 ## Making it work with "compton"
 
@@ -88,7 +88,7 @@ A future work might be to find some "colorfullness"-preserving algorithm, in add
 
 * The `compiz` plugin and the ubuntu forum for showing that the task is possible, and showing it should be OpenGL-based
 * Compton developers
-* NegativeScreen(Windows) developers for providing analysis, matrices examples
+* NegativeScreen(Windows) developers for providing analysis, matrix examples
 * Kurnevsky Evgeny for suggesting and explaining on how to use compton for such a task.
 
-(This repository was previosly hosted on github here: https://github.com/vn971/linux-color-inversion but github messed up with its ToS pretty seriously, so I moved to gitLab.)
+(This repository was previosly hosted on github: [https://github.com/vn971/linux-color-inversion](https://github.com/vn971/linux-color-inversion) but github messed up with its ToS pretty seriously, so I moved to gitLab.)
