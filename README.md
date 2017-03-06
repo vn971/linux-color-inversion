@@ -37,9 +37,9 @@ References: these color transformations are also implemented in the Windows-only
 
 This approach preserves the "color" (hue) and maintains color richness (the transformation is a bijection from RGB color space to itself).
 
-Technically, this transformation is the same as doing RGB negation combined with 180-degree HUE rotation.
+Technically, this transformation is the same as doing 180-degree HUE rotation combined with RGB negation.
 
-See below on how to enable this color transformation on Linux (compton).
+See below on how to enable this color transformation on Linux (compton). You apply such color transformation to images in GIMP: 1.Menu > Colors > HueSaturation > Hue > 180 > OK. 2.Menu > Colors > Invert
 
 ## RGB shift (light bias)
 The same as RGB shift, but with a bias to "colorfullness"
