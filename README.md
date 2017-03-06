@@ -83,6 +83,8 @@ A future work might be to find some "colorfullness"-preserving algorithm, in add
 
 ## Credits
 
+
 * The `compiz` plugin and the ubuntu forum for showing that the task is possible, and showing it should be OpenGL-based
 * Compton developers
+* "NegativeScreen" developers for providing analysis, matrix examples
 * Kurnevsky Evgeny for suggesting and explaining on how to use compton for such a task.
