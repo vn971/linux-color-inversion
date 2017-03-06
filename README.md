@@ -75,6 +75,8 @@ To the best of my knowledge, these approaches do NOT work:
 * xcalib modifications, because it uses gamma ramps
 * and actually everything non-OpenGL-based.
 
+MacOS users had an option for RGB shift, but seemingly lost it in 2014: https://github.com/lswank/Tranquility/issues/9
+
 Reported to be working:
 
 * ubuntu `compiz` compositor along with a manually compiled "Color Filter" plugin. [https://ubuntuforums.org/showthread.php?t=1419702](https://ubuntuforums.org/showthread.php?t=1419702)
