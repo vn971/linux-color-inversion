@@ -90,5 +90,3 @@ A future work might be to find some "colorfullness"-preserving algorithm, in add
 * Compton developers
 * NegativeScreen(Windows) developers for providing analysis, matrix examples
 * Kurnevsky Evgeny for suggesting and explaining on how to use compton for such a task.
-
-(This repository was previosly hosted on github: [https://github.com/vn971/linux-color-inversion](https://github.com/vn971/linux-color-inversion) but github messed up with its ToS pretty seriously, so I moved to gitLab.)
