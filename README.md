@@ -8,12 +8,12 @@ There are many ways to do "color inversion" though:
 
 Name | First image <br/>(editor) | Second image <br/>(color chooser) | Third image <br/>(gimp chooser)
 ---- | ---- | ---- | ----
-Original Image| ![](./editor.png) | ![](./img4.png) | ![](./gchooser.png)
-RGB <br/>negation | ![](./editor_rgb.png) | ![](./img4_rgb.png) | ![](./gchooser_rgb.png)
-Matrix <br/>(halfs) | ![](./editor_matrix_half.png) | ![](./img4_matrix_half.png) | ![](./gchooser_matrix_half.png)
-Matrix <br/>(thirds) | ![](./editor_matrix_third.png) | ![](./img4_matrix_third.png) | ![](./gchooser_matrix_third.png)
-RGB shift | ![](./editor_rgb_shift.png) | ![](./img4_rgb_shift.png) | ![](./gchooser_rgb_shift.png)
-RGB Shift<br/>(light <br/>biased) | ![](./editor_rgb_shift_bias.png) | ![](./img4_rgb_shift_bias.png) | ![](./gchooser_rgb_shift_bias.png)
+Original Image| ![](./doc/editor.png) | ![](./doc/img4.png) | ![](./doc/gchooser.png)
+RGB <br/>negation | ![](./doc/editor_rgb.png) | ![](./doc/img4_rgb.png) | ![](./doc/gchooser_rgb.png)
+Matrix <br/>(halfs) | ![](./doc/editor_matrix_half.png) | ![](./doc/img4_matrix_half.png) | ![](./doc/gchooser_matrix_half.png)
+Matrix <br/>(thirds) | ![](./doc/editor_matrix_third.png) | ![](./doc/img4_matrix_third.png) | ![](./doc/gchooser_matrix_third.png)
+RGB shift | ![](./doc/editor_shift.png) | ![](./doc/img4_shift.png) | ![](./doc/gchooser_shift.png)
+RGB Shift<br/>(non-linear) | ![](./doc/editor_shift_nonlinear.png) | ![](./doc/img4_shift_nonlinear.png) | ![](./doc/gchooser_shift_nonlinear.png)
 
 ## RGB negation
 The simplest, but probably also the worst.
@@ -59,7 +59,7 @@ In order to bring these niceties to your system do:
 * Install `compton` compositor
 * Clone this repo (or download the *.glsl files)
 * Go into the directory containing the *.glsl files
-* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat color_rgb_shift.glsl)" --invert-color-include id!=0`
+* Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat shift_whiteish.glsl)" --invert-color-include id!=0`
 * If you use subpixel order for your fonts, consider inverting them simultaneously, too (RGB should become BGR and vice-versa).
 
 If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the "script" above.
