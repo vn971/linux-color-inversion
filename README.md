@@ -77,6 +77,8 @@ To the best of my knowledge, these approaches do NOT work:
 * xcalib modifications, because it uses gamma ramps
 * and actually everything non-OpenGL-based.
 
+Some discussion on Wayland support can be found [here](https://github.com/vn971/linux-color-inversion/issues/2).
+
 MacOS users had an option for RGB shift, but seemingly lost it in 2014: https://github.com/lswank/Tranquility/issues/9
 
 Reported to be working:
