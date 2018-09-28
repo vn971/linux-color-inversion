@@ -13,6 +13,7 @@ RGB <br/>negation | ![](./doc/editor_rgb.png) | ![](./doc/img4_rgb.png) | ![](./
 Matrix <br/>(halfs) | ![](./doc/editor_matrix_half.png) | ![](./doc/img4_matrix_half.png) | ![](./doc/gchooser_matrix_half.png)
 Matrix <br/>(thirds) | ![](./doc/editor_matrix_third.png) | ![](./doc/img4_matrix_third.png) | ![](./doc/gchooser_matrix_third.png)
 RGB shift | ![](./doc/editor_shift.png) | ![](./doc/img4_shift.png) | ![](./doc/gchooser_shift.png)
+RGB shift nocontrast | ![](./doc/editor_shift_nocontrast.png) | ![](./doc/img4_shift_nocontrast.png) | ![](./doc/gchooser_shift_nocontrast.png)
 
 ## RGB negation
 The simplest, but probably also the worst.
@@ -41,6 +42,9 @@ Technically, this transformation is the same as doing 180-degree HUE rotation co
 See below on how to enable this color transformation on Linux (compton). You can test it on images with GIMP:
 1. Menu > Colors > HueSaturation > Hue > 180 > OK.
 2. Menu > Colors > Invert
+
+## RGB shift no-contrast (recommended)
+Same as RGB shift, but make absolutely black colors be a bit white-ish. This is because it is actually hard for the eye to read absolutely white letter near absolutely black background. The contrast "white" blinds you a bit. Having at least some light coming from background helps a lot (in my opinion).
 
 ## Making it work with "compton"
 
