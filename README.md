@@ -13,7 +13,6 @@ RGB <br/>negation | ![](./doc/editor_rgb.png) | ![](./doc/img4_rgb.png) | ![](./
 Matrix <br/>(halfs) | ![](./doc/editor_matrix_half.png) | ![](./doc/img4_matrix_half.png) | ![](./doc/gchooser_matrix_half.png)
 Matrix <br/>(thirds) | ![](./doc/editor_matrix_third.png) | ![](./doc/img4_matrix_third.png) | ![](./doc/gchooser_matrix_third.png)
 RGB shift | ![](./doc/editor_shift.png) | ![](./doc/img4_shift.png) | ![](./doc/gchooser_shift.png)
-RGB Shift<br/>(non-linear) | ![](./doc/editor_shift_nonlinear.png) | ![](./doc/img4_shift_nonlinear.png) | ![](./doc/gchooser_shift_nonlinear.png)
 
 ## RGB negation
 The simplest, but probably also the worst.
@@ -42,17 +41,6 @@ Technically, this transformation is the same as doing 180-degree HUE rotation co
 See below on how to enable this color transformation on Linux (compton). You can test it on images with GIMP:
 1. Menu > Colors > HueSaturation > Hue > 180 > OK.
 2. Menu > Colors > Invert
-
-## RGB shift (light bias)
-The same as RGB shift, but with a bias to "colorfullness"
-for dark colors (also making them less dark).
-
-It tends to preserve "colorfullness" a bit better than "RGB shift".
-It loses the RGB space a bit though because of taking fractions.
-The "color gamut" is preserved.
-
-This seems to be a controversal color inversion technique,
-but it actually gives pretty good results for e.g. code diffs (TODO: add screenshots). I'll write a full description later.
 
 ## Making it work with "compton"
 
