@@ -56,7 +56,7 @@ In order to bring these niceties to your system do:
 * Launch the compositor with: `compton --backend glx --glx-fshader-win "$(cat shift_whiteish.glsl)" --invert-color-include id!=0`
 * If you use subpixel order for your fonts, consider inverting them simultaneously, too (RGB should become BGR and vice-versa).
 
-If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the "script" above.
+If you want to try out other transformations (like matrices, or maybe some of your own glsl), just insert a different file into the command above.
 
 **Warning:** This will replace your current (xfce/gnome/kde/i3/whatever) compositor. Non-permanently, so if you're not satisfied, kill the compositor and/or start your old one back. Alternatively, log out and log in back.
 
